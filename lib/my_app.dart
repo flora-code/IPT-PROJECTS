@@ -1,3 +1,4 @@
+import 'package:auntie_rafiki/pages/auth/login_page.dart';
 import 'package:auntie_rafiki/pages/boom_color_changer_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,10 +12,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: HomePage(),
+      home: LoginPage(),
       routes: {
         'boom_color_changer': (context) {
           return BoomColorChangerPage();
+        },
+        'home_page': (context) {
+          return HomePage();
         }
       },
     );
