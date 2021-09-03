@@ -10,7 +10,7 @@ class BoomColorChangerPage extends StatefulWidget {
 
 class _BoomColorChangerPageState extends State<BoomColorChangerPage> {
   Color _backgroundColor = Colors.pinkAccent;
-  List<Color> _ColorList = [
+  List<Color> _colorList = [
     Colors.blue,
     Colors.amber,
     Colors.grey,
@@ -20,8 +20,8 @@ class _BoomColorChangerPageState extends State<BoomColorChangerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: _backgroundColor,
       appBar: AppBar(
-        backgroundColor: _backgroundColor,
         elevation: 0,
         leading: Icon(
           Icons.color_lens,
@@ -43,11 +43,11 @@ class _BoomColorChangerPageState extends State<BoomColorChangerPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Boom - magic color change!'),
-          Spacer(),
+          SizedBox(height: 60.0),
           Container(
             height: 100,
             child: ListView.builder(
-                itemCount: _ColorList.length,
+                itemCount: _colorList.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -55,10 +55,10 @@ class _BoomColorChangerPageState extends State<BoomColorChangerPage> {
                     child: RoundButton(
                       onTap: () {
                         setState(() {
-                          _backgroundColor = _ColorList[index];
+                          _backgroundColor = _colorList[index];
                         });
                       },
-                      color: _ColorList[index],
+                      color: _colorList[index],
                     ),
                   );
                 }),

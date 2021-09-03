@@ -18,19 +18,32 @@ class HomePage extends StatelessWidget {
       ),
       drawer: Container(
         color: Colors.purple,
-        width: MediaQuery.of(context).size.width * 0.3,
+        width: MediaQuery.of(context).size.width * 0.8,
         child: ListView(
           children: [
             //  AppBar(title: Text('INDUSTRIAL PROJECT')),
-                        UserAccountsDrawerHeader(accountName: Text('FLORA'), accountEmail: Text('floraikanga112@email.com'), currentAccountPicture:CircleAvatar(backgroundImage:AssetImage('assets/images/kim.jpg'),),),
+            UserAccountsDrawerHeader(
+              accountName: Text('FLORA'),
+              accountEmail: Text('floraikanga112@email.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/kim.jpg'),
+              ),
+            ),
 
-             ListTile(
-             //leading:circlevatar(backgroundColor:Colors.brown,)
-             title: Text('Boom Color Changer'),
-             onTap: () {
+            ListTile(
+              //leading:circlevatar(backgroundColor:Colors.brown,)
+              title: Text('Boom Color Changer'),
+              onTap: () {
                 Navigator.of(context).pushNamed('boom_color_changer_page');
               },
-             ),
+            ),
+            ListTile(
+              //leading:circlevatar(backgroundColor:Colors.brown,)
+              title: Text('Events'),
+              onTap: () {
+                Navigator.of(context).pushNamed('event_list_page');
+              },
+            ),
           ],
         ),
       ),
